@@ -14,6 +14,10 @@ target :DummyiOS do
   pod 'FBSDKLoginKit', '~> 4.3'
   pod 'FXKeychain', '~> 1.5'
   pod 'pop', '~> 1.0'
+  
+  #testing
+  pod 'TUDelorean'
+  pod 'Expecta+Snapshots', '~> 1.3'
 end
 
 target :DummywOS do

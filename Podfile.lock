@@ -5,6 +5,10 @@ PODS:
   - Bolts/AppLinks (1.2.0):
     - Bolts/Tasks
   - Bolts/Tasks (1.2.0)
+  - Expecta (1.0.2)
+  - Expecta+Snapshots (1.3.4):
+    - Expecta (~> 1.0)
+    - FBSnapshotTestCase (~> 1.8)
   - FBSDKCoreKit (4.5.1):
     - Bolts (~> 1.1)
     - FBSDKCoreKit/arc (= 4.5.1)
@@ -16,19 +20,27 @@ PODS:
     - FBSDKCoreKit/arc
   - FBSDKLoginKit (4.5.1):
     - FBSDKCoreKit
+  - FBSnapshotTestCase (1.8.1)
   - FXKeychain (1.5.3)
   - pop (1.0.7)
+  - TUDelorean (0.9.0)
 
 DEPENDENCIES:
+  - Expecta+Snapshots (~> 1.3)
   - FBSDKLoginKit (~> 4.3)
   - FXKeychain (~> 1.5)
   - pop (~> 1.0)
+  - TUDelorean
 
 SPEC CHECKSUMS:
   Bolts: d176cb1e0012175589e389a9db49b85e27787576
+  Expecta: 54e8a3530add08f4f0208c111355eda7cde74a53
+  Expecta+Snapshots: ca15bfb57e7a0f78f86c7699c2c54ffacfa4ad2a
   FBSDKCoreKit: f335eaf6865e1e1597dee1debfb533045500da47
   FBSDKLoginKit: 225cc9a388a92916ee3f3bb14422017b6e44b65b
+  FBSnapshotTestCase: 3dc3899168747a0319c5278f5b3445c13a6532dd
   FXKeychain: 2fe54573946ffef634f4e2a2851e6c8f4ea15e76
   pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
+  TUDelorean: 2220dd6b5a3fda0bd00cc9bb80cdadda3c99e75c
 
 COCOAPODS: 0.38.2

@@ -1,0 +1,6 @@
+framework module TUDelorean {
+  umbrella header "TUDelorean-umbrella.h"
+
+  export *
+  module * { export * }
+}
