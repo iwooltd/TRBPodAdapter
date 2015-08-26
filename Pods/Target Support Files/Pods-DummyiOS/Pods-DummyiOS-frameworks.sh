@@ -52,6 +52,8 @@ code_sign_if_enabled() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework 'Pods-DummyiOS/AFNetworking.framework'
+  install_framework 'Pods-DummyiOS/AFOAuth2Manager.framework'
   install_framework 'Pods-DummyiOS/Bolts.framework'
   install_framework 'Pods-DummyiOS/Expecta.framework'
   install_framework 'Pods-DummyiOS/Expecta_Snapshots.framework'
@@ -59,10 +61,15 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods-DummyiOS/FBSDKLoginKit.framework'
   install_framework 'Pods-DummyiOS/FBSnapshotTestCase.framework'
   install_framework 'Pods-DummyiOS/FXKeychain.framework'
+  install_framework 'Pods-DummyiOS/Mantle.framework'
+  install_framework 'Pods-DummyiOS/Overcoat.framework'
+  install_framework 'Pods-DummyiOS/ReactiveCocoa.framework'
   install_framework 'Pods-DummyiOS/TUDelorean.framework'
   install_framework 'Pods-DummyiOS/pop.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework 'Pods-DummyiOS/AFNetworking.framework'
+  install_framework 'Pods-DummyiOS/AFOAuth2Manager.framework'
   install_framework 'Pods-DummyiOS/Bolts.framework'
   install_framework 'Pods-DummyiOS/Expecta.framework'
   install_framework 'Pods-DummyiOS/Expecta_Snapshots.framework'
@@ -70,6 +77,9 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods-DummyiOS/FBSDKLoginKit.framework'
   install_framework 'Pods-DummyiOS/FBSnapshotTestCase.framework'
   install_framework 'Pods-DummyiOS/FXKeychain.framework'
+  install_framework 'Pods-DummyiOS/Mantle.framework'
+  install_framework 'Pods-DummyiOS/Overcoat.framework'
+  install_framework 'Pods-DummyiOS/ReactiveCocoa.framework'
   install_framework 'Pods-DummyiOS/TUDelorean.framework'
   install_framework 'Pods-DummyiOS/pop.framework'
 fi

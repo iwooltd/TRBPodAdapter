@@ -15,6 +15,16 @@ target :DummyiOS do
   pod 'FXKeychain', '~> 1.5'
   pod 'pop', '~> 1.0'
   
+  #TRBSocialClient
+  pod 'AFOAuth2Manager', '~> 2.2'
+  
+  #TRBAPIClient
+  pod 'Overcoat', '~> 3.0'
+  pod 'Overcoat/ReactiveCocoa', '~>3.0'
+  
+  #TRBCore
+  pod 'AFNetworking', '~> 2.5.4'
+  
   #testing
   pod 'TUDelorean'
   pod 'Expecta+Snapshots', '~> 1.3'
