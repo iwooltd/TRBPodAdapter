@@ -1,0 +1,6 @@
+#include "DZImageEditing.xcconfig"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/DZImageEditing" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/CardIO"
+OTHER_LDFLAGS = ${DZIMAGEEDITING_OTHER_LDFLAGS}
+PODS_ROOT = ${SRCROOT}
+SKIP_INSTALL = YES

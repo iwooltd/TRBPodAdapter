@@ -1,0 +1,6 @@
+framework module DZImageEditing {
+  umbrella header "DZImageEditing-umbrella.h"
+
+  export *
+  module * { export * }
+}
