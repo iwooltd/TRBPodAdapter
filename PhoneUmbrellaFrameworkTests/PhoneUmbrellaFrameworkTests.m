@@ -1,19 +1,19 @@
 //
-//  DummywOSTests.m
-//  DummywOSTests
+//  PhoneUmbrellaFrameworkTests.m
+//  PhoneUmbrellaFrameworkTests
 //
-//  Created by Tai Heng on 26/08/2015.
+//  Created by Tai Heng on 01/09/2015.
 //
 //
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@interface DummywOSTests : XCTestCase
+@interface PhoneUmbrellaFrameworkTests : XCTestCase
 
 @end
 
-@implementation DummywOSTests
+@implementation PhoneUmbrellaFrameworkTests
 
 - (void)setUp {
     [super setUp];

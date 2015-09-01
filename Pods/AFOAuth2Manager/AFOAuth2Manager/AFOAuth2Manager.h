@@ -22,7 +22,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "AFHTTPRequestOperationManager.h"
+@import AFNetworking;
 
 @class AFOAuthCredential;
 

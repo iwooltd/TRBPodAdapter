@@ -1,19 +1,19 @@
 //
-//  DummyiOSTests.m
-//  DummyiOSTests
+//  WatchUmbrellaFrameworkTests.m
+//  WatchUmbrellaFrameworkTests
 //
-//  Created by Tai Heng on 26/08/2015.
+//  Created by Tai Heng on 01/09/2015.
 //
 //
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@interface DummyiOSTests : XCTestCase
+@interface WatchUmbrellaFrameworkTests : XCTestCase
 
 @end
 
-@implementation DummyiOSTests
+@implementation WatchUmbrellaFrameworkTests
 
 - (void)setUp {
     [super setUp];
