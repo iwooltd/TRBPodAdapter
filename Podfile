@@ -27,6 +27,8 @@ target :PhoneUmbrellaFramework do
   
   # TRBUIKit
   pod 'pop', '~> 1.0'
+  pod 'MBProgressHUD', '~> 0.9.1'
+
   
   #TRBSocialClient
   pod 'AFOAuth2Manager', '~> 2.2'

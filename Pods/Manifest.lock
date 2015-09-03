@@ -51,6 +51,7 @@ PODS:
   - Mantle (2.0.4):
     - Mantle/extobjc (= 2.0.4)
   - Mantle/extobjc (2.0.4)
+  - MBProgressHUD (0.9.1)
   - mopub-ios-sdk (3.10.0):
     - mopub-ios-sdk/MoPubSDK (= 3.10.0)
   - mopub-ios-sdk/MoPubSDK (3.10.0)
@@ -82,6 +83,7 @@ DEPENDENCIES:
   - FBSDKLoginKit (~> 4.3)
   - FXKeychain (~> 1.5)
   - JazzHands (~> 0.2)
+  - MBProgressHUD (~> 0.9.1)
   - mopub-ios-sdk
   - Overcoat (~> 3.0)
   - Overcoat/ReactiveCocoa (~> 3.0)
@@ -103,6 +105,7 @@ SPEC CHECKSUMS:
   FXKeychain: 2fe54573946ffef634f4e2a2851e6c8f4ea15e76
   JazzHands: d2343c3f2f9d70598d0cad8f521ce3893842a44a
   Mantle: 6bee68168423948be0c0c5924832bf3af188e099
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   mopub-ios-sdk: 74c66841809637f750b6ecba93e8c131da3969c6
   Overcoat: e7a04e2127ed48a247ee859eaf2a9666db838299
   pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
@@ -110,4 +113,4 @@ SPEC CHECKSUMS:
   TPKeyboardAvoiding: e5af6e5e130ac46c9127b22cd2006871ad1d3f42
   TUDelorean: 2220dd6b5a3fda0bd00cc9bb80cdadda3c99e75c
 
-COCOAPODS: 0.38.2
+COCOAPODS: 0.39.0.beta.4
