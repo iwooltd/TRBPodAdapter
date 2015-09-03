@@ -18,29 +18,8 @@
 
 #import <Foundation/Foundation.h>
 
-#import <FBSDKCoreKit/FBSDKApplicationDelegate.h>
-#import <FBSDKCoreKit/FBSDKMacros.h>
+extern NSString *const FBSDKDialogConfigurationNameDefault;
+extern NSString *const FBSDKDialogConfigurationNameSharing;
 
-#import "BridgeAPI/FBSDKBridgeAPIRequest.h"
-#import "BridgeAPI/FBSDKBridgeAPIResponse.h"
-#import "BridgeAPI/FBSDKURLOpening.h"
-
-FBSDK_EXTERN NSString *const FBSDKApplicationDidBecomeActiveNotification;
-
-@class FBSDKApplicationCall;
-
-typedef void(^FBSDKBridgeAPICallbackBlock)(FBSDKBridgeAPIResponse *response);
-
-@interface FBSDKApplicationDelegate ()
-
-- (void)openBridgeAPIRequest:(FBSDKBridgeAPIRequest *)request
-     useSafariViewController:(BOOL)useSafariViewController
-             completionBlock:(FBSDKBridgeAPICallbackBlock)completionBlock;
-
-- (void)openURLWithSafariViewController:(NSURL *)url sender:(id<FBSDKURLOpening>)sender handler:(void(^)(BOOL))handler;
-
-- (void)openURL:(NSURL *)url sender:(id<FBSDKURLOpening>)sender handler:(void(^)(BOOL))handler;
-
-@property (nonatomic, readonly, getter=isActive) BOOL active;
-
-@end
+extern NSString *const FBSDKDialogConfigurationFeatureUseNativeFlow;
+extern NSString *const FBSDKDialogConfigurationFeatureUseSafariViewController;
