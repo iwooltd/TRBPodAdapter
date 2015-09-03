@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "96D6874DAE6D8588A07069DEA381C7FC"
-               BuildableName = "Expecta.framework"
-               BlueprintName = "Expecta"
+               BlueprintIdentifier = "80594DE9ED9110012A2B17D180819309"
+               BuildableName = "Pods_PhoneUmbrellaTestFramework.framework"
+               BlueprintName = "Pods-PhoneUmbrellaTestFramework"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "96D6874DAE6D8588A07069DEA381C7FC"
-            BuildableName = "Expecta.framework"
-            BlueprintName = "Expecta"
+            BlueprintIdentifier = "80594DE9ED9110012A2B17D180819309"
+            BuildableName = "Pods_PhoneUmbrellaTestFramework.framework"
+            BlueprintName = "Pods-PhoneUmbrellaTestFramework"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -60,6 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "80594DE9ED9110012A2B17D180819309"
+            BuildableName = "Pods_PhoneUmbrellaTestFramework.framework"
+            BlueprintName = "Pods-PhoneUmbrellaTestFramework"
+            ReferencedContainer = "container:Pods.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

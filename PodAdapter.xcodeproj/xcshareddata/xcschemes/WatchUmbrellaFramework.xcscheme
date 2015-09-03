@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "96D6874DAE6D8588A07069DEA381C7FC"
-               BuildableName = "Expecta.framework"
-               BlueprintName = "Expecta"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               BlueprintIdentifier = "05D412D41B959D8F00E9633B"
+               BuildableName = "WatchUmbrellaFramework.framework"
+               BlueprintName = "WatchUmbrellaFramework"
+               ReferencedContainer = "container:PodAdapter.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "05D412DE1B959D8F00E9633B"
+               BuildableName = "WatchUmbrellaFrameworkTests.xctest"
+               BlueprintName = "WatchUmbrellaFrameworkTests"
+               ReferencedContainer = "container:PodAdapter.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "05D412D41B959D8F00E9633B"
+            BuildableName = "WatchUmbrellaFramework.framework"
+            BlueprintName = "WatchUmbrellaFramework"
+            ReferencedContainer = "container:PodAdapter.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -45,10 +64,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "96D6874DAE6D8588A07069DEA381C7FC"
-            BuildableName = "Expecta.framework"
-            BlueprintName = "Expecta"
-            ReferencedContainer = "container:Pods.xcodeproj">
+            BlueprintIdentifier = "05D412D41B959D8F00E9633B"
+            BuildableName = "WatchUmbrellaFramework.framework"
+            BlueprintName = "WatchUmbrellaFramework"
+            ReferencedContainer = "container:PodAdapter.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -60,6 +79,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "05D412D41B959D8F00E9633B"
+            BuildableName = "WatchUmbrellaFramework.framework"
+            BlueprintName = "WatchUmbrellaFramework"
+            ReferencedContainer = "container:PodAdapter.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

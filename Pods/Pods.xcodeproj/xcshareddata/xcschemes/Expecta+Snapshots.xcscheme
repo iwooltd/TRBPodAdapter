@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "789B7FA3599F9A5AE85D84B60AD49BCB"
+               BlueprintIdentifier = "2025A4B79672D2951BD2BAC4F8A2F121"
                BuildableName = "Expecta_Snapshots.framework"
                BlueprintName = "Expecta+Snapshots"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "789B7FA3599F9A5AE85D84B60AD49BCB"
+            BlueprintIdentifier = "2025A4B79672D2951BD2BAC4F8A2F121"
             BuildableName = "Expecta_Snapshots.framework"
             BlueprintName = "Expecta+Snapshots"
             ReferencedContainer = "container:Pods.xcodeproj">
