@@ -41,7 +41,7 @@
     return [snapshotController compareSnapshotOfViewOrLayer:viewOrLayer
                                                    selector:NSSelectorFromString(snapshot)
                                                  identifier:nil
-                                                  tolerance:0
+                                                  tolerance:0.05
                                                       error:error];
 }
 
