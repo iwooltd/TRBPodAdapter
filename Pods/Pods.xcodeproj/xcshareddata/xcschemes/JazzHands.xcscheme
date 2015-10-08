@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ADA112E0E2CF0C26C97CD8BA545D4F19"
+               BlueprintIdentifier = "B9407482744B57401D7B2D67336E50C3"
                BuildableName = "JazzHands.framework"
                BlueprintName = "JazzHands"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "ADA112E0E2CF0C26C97CD8BA545D4F19"
+            BlueprintIdentifier = "B9407482744B57401D7B2D67336E50C3"
             BuildableName = "JazzHands.framework"
             BlueprintName = "JazzHands"
             ReferencedContainer = "container:Pods.xcodeproj">

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8E0B41807EFD399377278D6A32CE2A7C"
+               BlueprintIdentifier = "D0BA965F8856CBBDBAE50CFD775CC539"
                BuildableName = "Overcoat.framework"
                BlueprintName = "Overcoat"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8E0B41807EFD399377278D6A32CE2A7C"
+            BlueprintIdentifier = "D0BA965F8856CBBDBAE50CFD775CC539"
             BuildableName = "Overcoat.framework"
             BlueprintName = "Overcoat"
             ReferencedContainer = "container:Pods.xcodeproj">

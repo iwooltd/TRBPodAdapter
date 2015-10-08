@@ -39,7 +39,7 @@ target :PhoneUmbrellaTestFramework do
     link_with 'PhoneUmbrellaTestFramework'
     
     pod 'TUDelorean'
-    pod 'Expecta+Snapshots', '~> 1.3'
+    pod 'Expecta+Snapshots', '~> 2.0'
 end
 
 target :WatchUmbrellaFramework do

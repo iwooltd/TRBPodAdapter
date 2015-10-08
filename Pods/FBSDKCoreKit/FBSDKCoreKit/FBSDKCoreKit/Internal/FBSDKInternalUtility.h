@@ -274,7 +274,7 @@ setJSONStringForObject:(id)object
  @abstract Unregisters a transient object that was previously registered with registerTransientObject:
  @param object The transient object
  */
-+ (void)unregisterTransientObject:(id)object;
++ (void)unregisterTransientObject:(__weak id)object;
 
 /*!
  @abstract validates that the app ID is non-nil, throws an NSException if nil.
@@ -285,6 +285,11 @@ setJSONStringForObject:(id)object
  @abstract validates that the right URL schemes are registered, throws an NSException if not.
  */
 + (void)validateURLSchemes;
+
+/*!
+ @abstract Attempts to find the first UIViewController in the view's responder chain. Returns nil if not found.
+ */
++ (UIViewController *)viewControllerforView:(UIView*)view;
 
 /*!
  @abstract returns true if the url scheme is registered in the CFBundleURLTypes

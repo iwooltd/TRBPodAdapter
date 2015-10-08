@@ -26,9 +26,11 @@
 #import "FBSDKBridgeAPIRequest.h"
 #import "FBSDKBridgeAPIResponse.h"
 #import "FBSDKConstants.h"
+#import "FBSDKContainerViewController.h"
 #import "FBSDKDynamicFrameworkLoader.h"
 #import "FBSDKError.h"
 #import "FBSDKInternalUtility.h"
+#import "FBSDKLogger.h"
 #import "FBSDKProfile+Internal.h"
 #import "FBSDKServerConfiguration.h"
 #import "FBSDKServerConfigurationManager.h"
@@ -197,7 +199,6 @@ static NSString *const FBSDKAppLinkInboundEvent = @"fb_al_inbound";
 
 #pragma mark - SFSafariViewControllerDelegate
 
-
 // This means the user tapped "Done" which we should treat as a cancellation.
 - (void)safariViewControllerDidFinish:(UIViewController *)safariViewController
 {
@@ -213,12 +214,27 @@ static NSString *const FBSDKAppLinkInboundEvent = @"fb_al_inbound";
 
   }
   [self _cancelBridgeRequest];
+  _safariViewController = nil;
+}
+
+#pragma mark - FBSDKContainerViewControllerDelegate
+
+- (void)viewControllerDidDisappear:(FBSDKContainerViewController *)viewController animated:(BOOL)animated
+{
+  if (_safariViewController) {
+    [FBSDKLogger singleShotLogEntry:FBSDKLoggingBehaviorDeveloperErrors
+                           logEntry:@"**ERROR**:\n The SFSafariViewController's parent view controller was dismissed.\n"
+     "This can happen if you are triggering login from a UIAlertController. Instead, make sure your top most view "
+     "controller will not be prematurely dismissed."];
+    [self safariViewControllerDidFinish:_safariViewController];
+  }
 }
 
 #pragma mark - Internal Methods
 
 - (void)openBridgeAPIRequest:(FBSDKBridgeAPIRequest *)request
      useSafariViewController:(BOOL)useSafariViewController
+          fromViewController:(UIViewController *)fromViewController
              completionBlock:(FBSDKBridgeAPICallbackBlock)completionBlock
 {
   if (!request) {
@@ -252,13 +268,16 @@ static NSString *const FBSDKAppLinkInboundEvent = @"fb_al_inbound";
     }
   };
   if (useSafariViewController) {
-    [self openURLWithSafariViewController:requestURL sender:nil handler:handler];
+    [self openURLWithSafariViewController:requestURL sender:nil fromViewController:fromViewController handler:handler];
   } else {
     [self openURL:requestURL sender:nil handler:handler];
   }
 }
 
-- (void)openURLWithSafariViewController:(NSURL *)url sender:(id<FBSDKURLOpening>)sender handler:(void(^)(BOOL))handler
+- (void)openURLWithSafariViewController:(NSURL *)url
+                                 sender:(id<FBSDKURLOpening>)sender
+                     fromViewController:(UIViewController *)fromViewController
+                                handler:(void(^)(BOOL))handler
 {
   if (![url.scheme hasPrefix:@"http"]) {
     [self openURL:url sender:sender handler:handler];
@@ -274,19 +293,27 @@ static NSString *const FBSDKAppLinkInboundEvent = @"fb_al_inbound";
   Class SFSafariViewControllerClass = fbsdkdfl_SFSafariViewControllerClass();
 
   if (SFSafariViewControllerClass) {
-    UIViewController *parent = [FBSDKInternalUtility topMostViewController];
+    UIViewController *parent = fromViewController ?: [FBSDKInternalUtility topMostViewController];
+    NSURLComponents *components = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:NO];
+    NSURLQueryItem *sfvcQueryItem = [[NSURLQueryItem alloc] initWithName:@"sfvc" value:@"1"];
+    [components setQueryItems:[components.queryItems arrayByAddingObject:sfvcQueryItem]];
+    url = components.URL;
+    FBSDKContainerViewController *container = [[FBSDKContainerViewController alloc] init];
+    container.delegate = self;
     if (parent.transitionCoordinator != nil) {
       // Wait until the transition is finished before presenting SafariVC to avoid a blank screen.
       [parent.transitionCoordinator animateAlongsideTransition:NULL completion:^(id<UIViewControllerTransitionCoordinatorContext> context) {
         // Note SFVC init must occur inside block to avoid blank screen.
         _safariViewController = [[SFSafariViewControllerClass alloc] initWithURL:url];
         [_safariViewController performSelector:@selector(setDelegate:) withObject:self];
-        [[FBSDKInternalUtility topMostViewController] presentViewController:_safariViewController animated:YES completion:nil];
+        [container displayChildController:_safariViewController];
+        [parent presentViewController:container animated:YES completion:nil];
       }];
     } else {
       _safariViewController = [[SFSafariViewControllerClass alloc] initWithURL:url];
       [_safariViewController performSelector:@selector(setDelegate:) withObject:self];
-      [parent presentViewController:_safariViewController animated:YES completion:nil];
+      [container displayChildController:_safariViewController];
+      [parent presentViewController:container animated:YES completion:nil];
     }
 
     // Assuming Safari View Controller always opens

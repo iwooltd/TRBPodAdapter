@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1741CF03C0DFABE392B670C327B3AC90"
+               BlueprintIdentifier = "A8BA8ABD7009FF8AB98ED7CFBF762B9E"
                BuildableName = "TUDelorean.framework"
                BlueprintName = "TUDelorean"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1741CF03C0DFABE392B670C327B3AC90"
+            BlueprintIdentifier = "A8BA8ABD7009FF8AB98ED7CFBF762B9E"
             BuildableName = "TUDelorean.framework"
             BlueprintName = "TUDelorean"
             ReferencedContainer = "container:Pods.xcodeproj">
