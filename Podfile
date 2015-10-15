@@ -13,7 +13,7 @@ target :PhoneUmbrellaFramework do
   
   # User app
   pod 'DZImageEditing', '~> 1.0'
-  pod 'CardIO', '~> 5.0.1'
+  pod 'CardIO', '~> 5.1.1'
   pod 'JazzHands', '~> 0.2'
   pod 'TPKeyboardAvoiding'
   pod 'mopub-ios-sdk'
