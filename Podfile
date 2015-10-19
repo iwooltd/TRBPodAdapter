@@ -12,7 +12,7 @@ target :PhoneUmbrellaFramework do
   link_with 'PhoneUmbrellaFramework'
   
   # User app
-  pod 'DZImageEditing', '~> 1.0'
+  pod 'DZImageEditing', :git => 'https://github.com/harryworld/DZImageEditing', :commit => 'e9eb958409b9c50ac37e1f2a307f1ddb03578bcb'
   pod 'CardIO', '~> 5.1.1'
   pod 'JazzHands', '~> 0.2'
   pod 'TPKeyboardAvoiding'

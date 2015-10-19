@@ -78,7 +78,7 @@ DEPENDENCIES:
   - AFNetworking (~> 2.5.4)
   - AFOAuth2Manager (~> 2.2)
   - CardIO (~> 5.1.1)
-  - DZImageEditing (~> 1.0)
+  - DZImageEditing (from `https://github.com/harryworld/DZImageEditing`, commit `e9eb958409b9c50ac37e1f2a307f1ddb03578bcb`)
   - Expecta+Snapshots (~> 2.0)
   - FBSDKLoginKit (~> 4.6.0-beta1)
   - FXKeychain (~> 1.5)
@@ -90,6 +90,16 @@ DEPENDENCIES:
   - pop (~> 1.0)
   - TPKeyboardAvoiding
   - TUDelorean
+
+EXTERNAL SOURCES:
+  DZImageEditing:
+    :commit: e9eb958409b9c50ac37e1f2a307f1ddb03578bcb
+    :git: https://github.com/harryworld/DZImageEditing
+
+CHECKOUT OPTIONS:
+  DZImageEditing:
+    :commit: e9eb958409b9c50ac37e1f2a307f1ddb03578bcb
+    :git: https://github.com/harryworld/DZImageEditing
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
