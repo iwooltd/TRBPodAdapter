@@ -43,7 +43,7 @@ PODS:
   - FBSDKCoreKit/no-arc (4.7.0):
     - Bolts (~> 1.1)
     - FBSDKCoreKit/arc
-  - FBSDKLoginKit (4.6.0):
+  - FBSDKLoginKit (4.7.0):
     - FBSDKCoreKit
   - FBSnapshotTestCase/Core (2.0.4)
   - FXKeychain (1.5.3)
@@ -80,7 +80,7 @@ DEPENDENCIES:
   - CardIO (~> 5.1.1)
   - DZImageEditing (from `https://github.com/harryworld/DZImageEditing`, commit `e9eb958409b9c50ac37e1f2a307f1ddb03578bcb`)
   - Expecta+Snapshots (~> 2.0)
-  - FBSDKLoginKit (~> 4.6.0-beta1)
+  - FBSDKLoginKit (~> 4.7.0)
   - FXKeychain (~> 1.5)
   - JazzHands (~> 0.2)
   - MBProgressHUD (~> 0.9.1)
@@ -110,7 +110,7 @@ SPEC CHECKSUMS:
   Expecta: 9d1bff6c8b0eeee73a166a2ee898892478927a15
   Expecta+Snapshots: 29b38dd695bc72a0ed2bea833937d78df41943ba
   FBSDKCoreKit: eb580bfc2040ad44f4c0b4f4d0befb1d35bce59c
-  FBSDKLoginKit: 3d07febbfa884b9878cacba54f705bb41f07d4b6
+  FBSDKLoginKit: 01bce8dd3f3a26a023b0ba4ffdde7ef5062889fe
   FBSnapshotTestCase: d94cf34841c9e77390e29009e8e2713479d48753
   FXKeychain: 2fe54573946ffef634f4e2a2851e6c8f4ea15e76
   JazzHands: d2343c3f2f9d70598d0cad8f521ce3893842a44a
