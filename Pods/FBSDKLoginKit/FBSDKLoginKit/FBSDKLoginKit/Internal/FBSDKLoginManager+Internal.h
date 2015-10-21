@@ -32,8 +32,6 @@
 @end
 
 @interface FBSDKLoginManager ()
-@property (nonatomic, weak) UIViewController *fromViewController;
-@property (nonatomic, readonly) NSSet *requestedPermissions;
 
 - (void)completeAuthentication:(FBSDKLoginCompletionParameters *)parameters expectChallenge:(BOOL)expectChallenge;
 
@@ -52,13 +50,14 @@
 - (void)setRequestedPermissions:(NSSet *)requestedPermissions;
 // for testing only
 - (NSString *)loadExpectedChallenge;
+
 @end
 
 // the category is made available for testing only
 @interface FBSDKLoginManager (Native) <FBSDKURLOpening>
 
 - (void)performNativeLogInWithParameters:(NSDictionary *)loginParams handler:(void(^)(BOOL, NSError*))handler;
-- (void)performBrowserLogInWithParameters:(NSDictionary *)loginParams handler:(void(^)(BOOL, NSString *,NSError*))handler;
+- (void)performBrowserLogInWithParameters:(NSDictionary *)loginParams handler:(void(^)(BOOL, NSError*))handler;
 
 @end
 

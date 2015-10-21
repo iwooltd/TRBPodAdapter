@@ -19,7 +19,7 @@ target :PhoneUmbrellaFramework do
   pod 'mopub-ios-sdk'
   
   # TRBAPIClient
-  pod 'FBSDKLoginKit', '~> 4.7.0'
+  pod 'FBSDKLoginKit', '~> 4.5.1'
   pod 'FXKeychain', '~> 1.5'
   pod 'Overcoat', '~> 3.0'
   pod 'Overcoat/ReactiveCocoa', '~>3.0'
