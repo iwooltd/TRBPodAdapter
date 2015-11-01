@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0654FE1E2AD07CB15FE42D17357FB50A"
-               BuildableName = "FBSDKLoginKit.framework"
-               BlueprintName = "FBSDKLoginKit"
+               BlueprintIdentifier = "04B50529D23F93E891FCB2F7FB7A6953"
+               BuildableName = "AlamofireOauth2.framework"
+               BlueprintName = "AlamofireOauth2"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0654FE1E2AD07CB15FE42D17357FB50A"
-            BuildableName = "FBSDKLoginKit.framework"
-            BlueprintName = "FBSDKLoginKit"
+            BlueprintIdentifier = "04B50529D23F93E891FCB2F7FB7A6953"
+            BuildableName = "AlamofireOauth2.framework"
+            BlueprintName = "AlamofireOauth2"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

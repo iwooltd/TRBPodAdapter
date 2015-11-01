@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0654FE1E2AD07CB15FE42D17357FB50A"
-               BuildableName = "FBSDKLoginKit.framework"
-               BlueprintName = "FBSDKLoginKit"
+               BlueprintIdentifier = "D6AF3913522D8407051F9229A3D35189"
+               BuildableName = "KeychainAccess.framework"
+               BlueprintName = "KeychainAccess"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0654FE1E2AD07CB15FE42D17357FB50A"
-            BuildableName = "FBSDKLoginKit.framework"
-            BlueprintName = "FBSDKLoginKit"
+            BlueprintIdentifier = "D6AF3913522D8407051F9229A3D35189"
+            BuildableName = "KeychainAccess.framework"
+            BlueprintName = "KeychainAccess"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
