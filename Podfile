@@ -24,7 +24,6 @@ target :PhoneUmbrellaFramework do
   pod 'Overcoat', '~> 3.0'
   pod 'Overcoat/ReactiveCocoa', '~>3.0'
   pod 'AFNetworking', '~> 2.5.4'
-  pod 'AlamofireOauth2', '~> 1.0'
   
   # TRBUIKit
   pod 'pop', '~> 1.0'
