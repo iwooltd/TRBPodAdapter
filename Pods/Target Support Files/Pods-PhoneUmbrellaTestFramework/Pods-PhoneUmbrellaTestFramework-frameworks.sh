@@ -84,14 +84,8 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "Pods-PhoneUmbrellaTestFramework/Expecta.framework"
-  install_framework "Pods-PhoneUmbrellaTestFramework/Expecta_Snapshots.framework"
-  install_framework "Pods-PhoneUmbrellaTestFramework/FBSnapshotTestCase.framework"
   install_framework "Pods-PhoneUmbrellaTestFramework/TUDelorean.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "Pods-PhoneUmbrellaTestFramework/Expecta.framework"
-  install_framework "Pods-PhoneUmbrellaTestFramework/Expecta_Snapshots.framework"
-  install_framework "Pods-PhoneUmbrellaTestFramework/FBSnapshotTestCase.framework"
   install_framework "Pods-PhoneUmbrellaTestFramework/TUDelorean.framework"
 fi

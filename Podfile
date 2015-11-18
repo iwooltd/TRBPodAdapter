@@ -13,8 +13,6 @@ target :PhoneUmbrellaFramework do
   
   # User app
   pod 'DZImageEditing', :git => 'https://github.com/harryworld/DZImageEditing', :commit => 'e9eb958409b9c50ac37e1f2a307f1ddb03578bcb'
-  pod 'CardIO', '~> 5.1.1'
-  pod 'JazzHands', '~> 0.2'
   pod 'TPKeyboardAvoiding'
   pod 'mopub-ios-sdk'
   
@@ -28,7 +26,7 @@ target :PhoneUmbrellaFramework do
   # TRBUIKit
   pod 'pop', '~> 1.0'
   pod 'MBProgressHUD', '~> 0.9.1'
-
+  pod 'NUI', '~> 0.5'
   
   #TRBSocialClient
   pod 'AFOAuth2Manager', '~> 2.2'
@@ -39,7 +37,6 @@ target :PhoneUmbrellaTestFramework do
     link_with 'PhoneUmbrellaTestFramework'
     
     pod 'TUDelorean'
-    pod 'Expecta+Snapshots', '~> 2.0'
 end
 
 target :WatchUmbrellaFramework do
