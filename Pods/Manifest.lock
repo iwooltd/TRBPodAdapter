@@ -55,6 +55,9 @@ PODS:
   - mopub-ios-sdk (4.0.0):
     - mopub-ios-sdk/MoPubSDK (= 4.0.0)
   - mopub-ios-sdk/MoPubSDK (4.0.0)
+  - NUI (0.5.5):
+    - NUIParse
+  - NUIParse (1.2.1)
   - Overcoat (3.0.1):
     - Overcoat/Core (= 3.0.1)
   - Overcoat/Core (3.0.1):
@@ -85,6 +88,7 @@ DEPENDENCIES:
   - JazzHands (~> 0.2)
   - MBProgressHUD (~> 0.9.1)
   - mopub-ios-sdk
+  - NUI (~> 0.5)
   - Overcoat (~> 3.0)
   - Overcoat/ReactiveCocoa (~> 3.0)
   - pop (~> 1.0)
@@ -117,6 +121,8 @@ SPEC CHECKSUMS:
   Mantle: 1912395033f601de5adc8ee91e48f46e4c7051ad
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   mopub-ios-sdk: 9a48533323861eb73bed62bc8a35468f72500be3
+  NUI: 53de7278003235deb2a375fe6f04c7a3aa3e49eb
+  NUIParse: 9b6d5a6b782dc654ac6c846d623885080306f07f
   Overcoat: e7a04e2127ed48a247ee859eaf2a9666db838299
   pop: bb773ae2c791ca2629de13b347e7a8b450fa6a57
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
