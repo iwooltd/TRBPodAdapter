@@ -84,38 +84,16 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "Pods-PhoneUmbrellaFramework/AFNetworking.framework"
-  install_framework "Pods-PhoneUmbrellaFramework/AFOAuth2Manager.framework"
   install_framework "Pods-PhoneUmbrellaFramework/Bolts.framework"
   install_framework "Pods-PhoneUmbrellaFramework/DZImageEditing.framework"
   install_framework "Pods-PhoneUmbrellaFramework/FBSDKCoreKit.framework"
   install_framework "Pods-PhoneUmbrellaFramework/FBSDKLoginKit.framework"
-  install_framework "Pods-PhoneUmbrellaFramework/FXKeychain.framework"
-  install_framework "Pods-PhoneUmbrellaFramework/MBProgressHUD.framework"
-  install_framework "Pods-PhoneUmbrellaFramework/Mantle.framework"
-  install_framework "Pods-PhoneUmbrellaFramework/NUI.framework"
-  install_framework "Pods-PhoneUmbrellaFramework/NUIParse.framework"
-  install_framework "Pods-PhoneUmbrellaFramework/Overcoat.framework"
-  install_framework "Pods-PhoneUmbrellaFramework/ReactiveCocoa.framework"
-  install_framework "Pods-PhoneUmbrellaFramework/TPKeyboardAvoiding.framework"
   install_framework "Pods-PhoneUmbrellaFramework/mopub_ios_sdk.framework"
-  install_framework "Pods-PhoneUmbrellaFramework/pop.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "Pods-PhoneUmbrellaFramework/AFNetworking.framework"
-  install_framework "Pods-PhoneUmbrellaFramework/AFOAuth2Manager.framework"
   install_framework "Pods-PhoneUmbrellaFramework/Bolts.framework"
   install_framework "Pods-PhoneUmbrellaFramework/DZImageEditing.framework"
   install_framework "Pods-PhoneUmbrellaFramework/FBSDKCoreKit.framework"
   install_framework "Pods-PhoneUmbrellaFramework/FBSDKLoginKit.framework"
-  install_framework "Pods-PhoneUmbrellaFramework/FXKeychain.framework"
-  install_framework "Pods-PhoneUmbrellaFramework/MBProgressHUD.framework"
-  install_framework "Pods-PhoneUmbrellaFramework/Mantle.framework"
-  install_framework "Pods-PhoneUmbrellaFramework/NUI.framework"
-  install_framework "Pods-PhoneUmbrellaFramework/NUIParse.framework"
-  install_framework "Pods-PhoneUmbrellaFramework/Overcoat.framework"
-  install_framework "Pods-PhoneUmbrellaFramework/ReactiveCocoa.framework"
-  install_framework "Pods-PhoneUmbrellaFramework/TPKeyboardAvoiding.framework"
   install_framework "Pods-PhoneUmbrellaFramework/mopub_ios_sdk.framework"
-  install_framework "Pods-PhoneUmbrellaFramework/pop.framework"
 fi

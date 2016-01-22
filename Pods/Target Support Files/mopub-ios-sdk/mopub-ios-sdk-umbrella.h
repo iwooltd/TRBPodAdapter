@@ -1,6 +1,5 @@
 #import <UIKit/UIKit.h>
 
-#import "FABKitProtocol.h"
 #import "MPBannerAdManager.h"
 #import "MPBannerAdManagerDelegate.h"
 #import "MPBannerCustomEventAdapter.h"
@@ -34,6 +33,10 @@
 #import "MPNetworkManager.h"
 #import "MPQRunLoopOperation.h"
 #import "MPRetryingHTTPOperation.h"
+#import "FABAttributes.h"
+#import "FABKitProtocol.h"
+#import "Fabric+FABKits.h"
+#import "Fabric.h"
 #import "MPAdWebView.h"
 #import "MPAdWebViewAgent.h"
 #import "MPHTMLBannerCustomEvent.h"
