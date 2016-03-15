@@ -13,12 +13,14 @@ PODS:
   - mopub-ios-sdk (4.3.0):
     - mopub-ios-sdk/MoPubSDK (= 4.3.0)
   - mopub-ios-sdk/MoPubSDK (4.3.0)
+  - TOCropViewController (1.2.6)
   - TUDelorean (0.9.0)
 
 DEPENDENCIES:
   - DZImageEditing (from `https://github.com/harryworld/DZImageEditing`, commit `e9eb958409b9c50ac37e1f2a307f1ddb03578bcb`)
   - FBSDKLoginKit
   - mopub-ios-sdk
+  - TOCropViewController
   - TUDelorean
 
 EXTERNAL SOURCES:
@@ -37,6 +39,7 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: aee20b6d9855f15b618d4fddd1a5ad45f5a4a59d
   FBSDKLoginKit: ec22dc49bd372b064e93d6773df4ffefb3a552a2
   mopub-ios-sdk: ef4aa305367b11c3bb465e9771e6622175049b03
+  TOCropViewController: 030e38f7c696d8eec4320a5baa8250b49c8f065f
   TUDelorean: 2220dd6b5a3fda0bd00cc9bb80cdadda3c99e75c
 
 COCOAPODS: 0.39.0

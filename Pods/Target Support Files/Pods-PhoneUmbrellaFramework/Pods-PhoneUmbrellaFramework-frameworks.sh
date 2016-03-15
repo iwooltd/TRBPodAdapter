@@ -88,6 +88,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-PhoneUmbrellaFramework/DZImageEditing.framework"
   install_framework "Pods-PhoneUmbrellaFramework/FBSDKCoreKit.framework"
   install_framework "Pods-PhoneUmbrellaFramework/FBSDKLoginKit.framework"
+  install_framework "Pods-PhoneUmbrellaFramework/TOCropViewController.framework"
   install_framework "Pods-PhoneUmbrellaFramework/mopub_ios_sdk.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -95,5 +96,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-PhoneUmbrellaFramework/DZImageEditing.framework"
   install_framework "Pods-PhoneUmbrellaFramework/FBSDKCoreKit.framework"
   install_framework "Pods-PhoneUmbrellaFramework/FBSDKLoginKit.framework"
+  install_framework "Pods-PhoneUmbrellaFramework/TOCropViewController.framework"
   install_framework "Pods-PhoneUmbrellaFramework/mopub_ios_sdk.framework"
 fi
