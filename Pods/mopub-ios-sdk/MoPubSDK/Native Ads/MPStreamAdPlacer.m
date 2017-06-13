@@ -5,21 +5,22 @@
 //  Copyright (c) 2014 MoPub. All rights reserved.
 //
 
-#import "MPStreamAdPlacer.h"
-#import "MPInstanceProvider.h"
-#import "MPNativeAdSource.h"
-#import "MPStreamAdPlacementData.h"
 #import "MPAdPositioning.h"
+#import "MPInstanceProvider.h"
+#import "MPLogging.h"
 #import "MPNativeAd+Internal.h"
 #import "MPNativeAdData.h"
-#import "MPNativeAdRendering.h"
-#import "MPLogging.h"
-#import "MPServerAdPositioning.h"
-#import "MPNativePositionSource.h"
 #import "MPNativeAdDelegate.h"
-#import "MPStaticNativeAdRenderer.h"
 #import "MPNativeAdRendererConfiguration.h"
+#import "MPNativeAdRendererConstants.h"
+#import "MPNativeAdRendering.h"
+#import "MPNativeAdSource.h"
+#import "MPNativePositionSource.h"
 #import "MPNativeView.h"
+#import "MPServerAdPositioning.h"
+#import "MPStaticNativeAdRenderer.h"
+#import "MPStreamAdPlacementData.h"
+#import "MPStreamAdPlacer.h"
 
 static NSInteger const kAdInsertionLookAheadAmount = 3;
 static const NSUInteger kIndexPathItemIndex = 1;
@@ -158,7 +159,7 @@ static const NSUInteger kIndexPathItemIndex = 1;
 
         // Get positioning information from the server.
         self.positioningSource = [[MPInstanceProvider sharedProvider] buildNativePositioningSource];
-        __typeof__(self) __weak weakSelf = self;
+        __weak __typeof__(self) weakSelf = self;
         [self.positioningSource loadPositionsWithAdUnitIdentifier:self.adUnitID completionHandler:^(MPAdPositioning *positioning, NSError *error) {
             __typeof__(self) strongSelf = weakSelf;
 
@@ -562,10 +563,18 @@ static const NSUInteger kIndexPathItemIndex = 1;
 
     if ([renderer respondsToSelector:@selector(viewSizeHandler)] && renderer.viewSizeHandler) {
         adSize = [renderer viewSizeHandler](maxWidth);
-    } else {
-        adSize = CGSizeMake(maxWidth, 44.0f);
-        MPLogWarn(@"WARNING: + (CGSize)viewSizeHandler is NOT implemented for native ad renderer %@ at index path %@. You MUST implement this method to ensure that ad placer native ad cells are correctly sized. Returning a default size of %@ for now.", NSStringFromClass([(id)renderer class]), indexPath, NSStringFromCGSize(adSize));
+        if (adSize.height == MPNativeViewDynamicDimension) {
+            UIView *adView = [ad retrieveAdViewForSizeCalculationWithError:nil];
+            if (adView) {
+                CGSize hydratedAdViewSize = [adView sizeThatFits:CGSizeMake(adSize.width, CGFLOAT_MAX)];
+                return hydratedAdViewSize;
+            }
+        }
+        return adSize;
     }
+
+    adSize = CGSizeMake(maxWidth, 44.0f);
+    MPLogWarn(@"WARNING: + (CGSize)viewSizeHandler is NOT implemented for native ad renderer %@ at index path %@. You MUST implement this method to ensure that ad placer native ad cells are correctly sized. Returning a default size of %@ for now.", NSStringFromClass([(id)renderer class]), indexPath, NSStringFromCGSize(adSize));
 
     return adSize;
 }

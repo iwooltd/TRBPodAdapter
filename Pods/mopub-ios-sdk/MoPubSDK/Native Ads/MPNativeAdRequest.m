@@ -156,8 +156,8 @@
                                   pauseVisiblePercent:configuration.nativeVideoPauseVisiblePercent
                                   impressionMinVisiblePercent:configuration.nativeVideoImpressionMinVisiblePercent
                                   impressionVisible:configuration.nativeVideoImpressionVisible
-                                  maxBufferingTime:configuration.nativeVideoMaxBufferingTime]
-                          forKey:kNativeVideoAdConfigKey];
+                                  maxBufferingTime:configuration.nativeVideoMaxBufferingTime
+                                  trackers:configuration.nativeVideoTrackers] forKey:kNativeVideoAdConfigKey];
             MPAdConfigurationLogEventProperties *logEventProperties =
                 [[MPAdConfigurationLogEventProperties alloc] initWithConfiguration:configuration];
             [classData setObject:logEventProperties forKey:kLogEventRequestPropertiesKey];
@@ -202,6 +202,10 @@
     self.loading = NO;
 
     adObject.renderer = self.customEventRenderer;
+
+    if ([(id)adObject.adAdapter respondsToSelector:@selector(setAdConfiguration:)]) {
+        [(id)adObject.adAdapter performSelector:@selector(setAdConfiguration:) withObject:self.adConfiguration];
+    }
 
     if (!error) {
         MPLogInfo(@"Successfully loaded native ad.");

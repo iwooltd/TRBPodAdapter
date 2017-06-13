@@ -12,13 +12,14 @@
 #import "MPAdDestinationDisplayAgent.h"
 #import "NSURL+MPAdditions.h"
 #import "UIWebView+MPAdditions.h"
-#import "MPAdWebView.h"
+#import "MPWebView.h"
 #import "MPInstanceProvider.h"
 #import "MPCoreInstanceProvider.h"
 #import "MPUserInteractionGestureRecognizer.h"
 #import "NSJSONSerialization+MPAdditions.h"
 #import "NSURL+MPAdditions.h"
 #import "MPInternalUtils.h"
+#import "MPAPIEndPoints.h"
 
 #ifndef NSFoundationVersionNumber_iOS_6_1
 #define NSFoundationVersionNumber_iOS_6_1 993.00
@@ -34,6 +35,8 @@
 @property (nonatomic, strong) id<MPAdAlertManagerProtocol> adAlertManager;
 @property (nonatomic, assign) BOOL userInteractedWithWebView;
 @property (nonatomic, strong) MPUserInteractionGestureRecognizer *userInteractionRecognizer;
+@property (nonatomic, assign) CGRect frame;
+@property (nonatomic, assign) BOOL hasPerformedInitialLoad;
 
 - (void)performActionForMoPubSpecificURL:(NSURL *)URL;
 - (BOOL)shouldIntercept:(NSURL *)URL navigationType:(UIWebViewNavigationType)navigationType;
@@ -56,7 +59,8 @@
 {
     self = [super init];
     if (self) {
-        self.view = [[MPInstanceProvider sharedProvider] buildMPAdWebViewWithFrame:frame delegate:self];
+        _frame = frame;
+
         self.destinationDisplayAgent = [[MPCoreInstanceProvider sharedProvider] buildMPAdDestinationDisplayAgentWithDelegate:self];
         self.delegate = delegate;
         self.shouldHandleRequests = YES;
@@ -64,7 +68,6 @@
 
         self.userInteractionRecognizer = [[MPUserInteractionGestureRecognizer alloc] initWithTarget:self action:@selector(handleInteraction:)];
         self.userInteractionRecognizer.cancelsTouchesInView = NO;
-        [self.view addGestureRecognizer:self.userInteractionRecognizer];
         self.userInteractionRecognizer.delegate = self;
     }
     return self;
@@ -111,6 +114,16 @@
 {
     self.configuration = configuration;
 
+    // Initialize web view
+    if (self.view != nil) {
+        self.view.delegate = nil;
+        [self.view removeFromSuperview];
+        self.view = nil;
+    }
+    self.view = [[MPWebView alloc] initWithFrame:self.frame];
+    self.view.delegate = self;
+    [self.view addGestureRecognizer:self.userInteractionRecognizer];
+
     // Ignore server configuration size for interstitials. At this point our web view
     // is sized correctly for the device's screen. Currently the server sends down values for a 3.5in
     // screen, and they do not size correctly on a 4in screen.
@@ -123,15 +136,12 @@
         }
     }
 
-    // excuse interstitials from user tapped check since it's already a takeover experience
-    // and certain videos may delay tap gesture recognition
-    if (configuration.adType == MPAdTypeInterstitial) {
-        self.userInteractedWithWebView = YES;
-    }
-
     [self.view mp_setScrollable:configuration.scrollable];
     [self.view disableJavaScriptDialogs];
-    [self.view loadHTMLString:[configuration adResponseHTMLString] baseURL:nil];
+
+    [self.view loadHTMLString:[configuration adResponseHTMLString]
+                      baseURL:[NSURL URLWithString:[MPAPIEndpoints baseURL]]
+     ];
 
     [self initAdAlertManager];
 }
@@ -183,9 +193,14 @@
     [self.delegate adActionDidFinish:self.view];
 }
 
-#pragma mark - <UIWebViewDelegate>
+- (MPAdConfiguration *)adConfiguration
+{
+    return self.configuration;
+}
 
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request
+#pragma mark - <MPWebViewDelegate>
+
+- (BOOL)webView:(MPWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request
  navigationType:(UIWebViewNavigationType)navigationType
 {
     if (!self.shouldHandleRequests) {
@@ -197,6 +212,13 @@
         [self performActionForMoPubSpecificURL:URL];
         return NO;
     } else if ([self shouldIntercept:URL navigationType:navigationType]) {
+
+        // Disable intercept without user interaction
+        if (!self.userInteractedWithWebView) {
+            MPLogInfo(@"Redirect without user interaction detected");
+            return NO;
+        }
+
         [self interceptURL:URL];
         return NO;
     } else {
@@ -205,10 +227,24 @@
     }
 }
 
-- (void)webViewDidStartLoad:(UIWebView *)webView
+- (void)webViewDidStartLoad:(MPWebView *)webView
 {
     [self.view disableJavaScriptDialogs];
 }
+
+- (void)webViewDidFinishLoad:(MPWebView *)webView
+{
+    if (!self.hasPerformedInitialLoad) {
+        // excuse interstitials from user tapped check since it's already a takeover experience
+        // and certain videos may delay tap gesture recognition
+        if (self.configuration.adType == MPAdTypeInterstitial) {
+            self.userInteractedWithWebView = YES;
+        }
+
+        self.hasPerformedInitialLoad = YES;
+    }
+}
+
 
 #pragma mark - MoPub-specific URL handlers
 - (void)performActionForMoPubSpecificURL:(NSURL *)URL
@@ -240,8 +276,8 @@
         return NO;
     } else if (navigationType == UIWebViewNavigationTypeLinkClicked) {
         return YES;
-    } else if (navigationType == UIWebViewNavigationTypeOther) {
-        return [[URL absoluteString] hasPrefix:[self.configuration clickDetectionURLPrefix]];
+    } else if (navigationType == UIWebViewNavigationTypeOther && self.userInteractedWithWebView) {
+        return YES;
     } else {
         return NO;
     }
