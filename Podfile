@@ -11,6 +11,9 @@ target :PhoneUmbrellaFramework do
   platform :ios, '8.0'
   #PhoneUmbrellaFramework
   
+  pod 'Firebase/Core'
+  pod 'Firebase/Crash'
+  
   # User app
   pod 'DZImageEditing', :git => 'https://github.com/harryworld/DZImageEditing', :commit => 'e9eb958409b9c50ac37e1f2a307f1ddb03578bcb'
   pod 'TOCropViewController'
