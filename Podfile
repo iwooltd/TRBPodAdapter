@@ -8,7 +8,7 @@ inhibit_all_warnings!
 use_frameworks!
 
 target :PhoneUmbrellaFramework do
-  platform :ios, '8.0'
+  platform :ios, '12.0'
   #PhoneUmbrellaFramework
   
   pod 'Firebase/Core'
@@ -21,7 +21,7 @@ target :PhoneUmbrellaFramework do
 end
 
 target :PhoneUmbrellaTestFramework do
-    platform :ios, '8.0'
+    platform :ios, '12.0'
     #PhoneUmbrellaTestFramework
     
     pod 'TUDelorean'
