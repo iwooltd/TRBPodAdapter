@@ -27,12 +27,3 @@ target :PhoneUmbrellaTestFramework do
     pod 'TUDelorean'
 end
 
-target :WatchUmbrellaFramework do
-  platform :watchos, "2.0"
-  #WatchUmbrellaFramework
-end
-
-target :WatchUmbrellaTestFramework do
-    platform :watchos, "2.0"
-    #WatchUmbrellaTestFramework
-end
