@@ -17,7 +17,6 @@ target :PhoneUmbrellaFramework do
   # User app
   pod 'DZImageEditing', :git => 'https://github.com/harryworld/DZImageEditing', :commit => 'e9eb958409b9c50ac37e1f2a307f1ddb03578bcb'
   pod 'TOCropViewController'
-  pod 'mopub-ios-sdk'
 end
 
 target :PhoneUmbrellaTestFramework do

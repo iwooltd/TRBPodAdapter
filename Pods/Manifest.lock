@@ -27,9 +27,6 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.1.1)
   - GoogleToolboxForMac/NSData+zlib (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
-  - mopub-ios-sdk (4.14.0):
-    - mopub-ios-sdk/MoPubSDK (= 4.14.0)
-  - mopub-ios-sdk/MoPubSDK (4.14.0)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
@@ -43,7 +40,6 @@ DEPENDENCIES:
   - DZImageEditing (from `https://github.com/harryworld/DZImageEditing`, commit `e9eb958409b9c50ac37e1f2a307f1ddb03578bcb`)
   - Firebase/Core
   - Firebase/Crash
-  - mopub-ios-sdk
   - TOCropViewController
   - TUDelorean
 
@@ -65,7 +61,6 @@ SPEC CHECKSUMS:
   FirebaseCrash: bce9fbfb7dd6cc850a41fe39740a2292e6b61f2e
   FirebaseInstanceID: 0500e3cb54a1a4e01a8cffcc09323b8bb8fc7e1e
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
-  mopub-ios-sdk: 7f08192469c06842a9354d972db32acd18127ae0
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 03eef2ee0b674770735cf79d9c4d3659cf6908e8
   TOCropViewController: e6e31b38d785a901e5651a1e7fff71bcda6c5214
