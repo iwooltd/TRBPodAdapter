@@ -13,11 +13,14 @@ target :PhoneUmbrellaFramework do
   
   pod 'Firebase/Core'
   pod 'Firebase/Crash'
+  pod 'GoogleWebRTC', '~> 1.1'
   
   # User app
   pod 'DZImageEditing', :git => 'https://github.com/harryworld/DZImageEditing', :commit => 'e9eb958409b9c50ac37e1f2a307f1ddb03578bcb'
   pod 'TOCropViewController'
 end
+
+
 
 target :PhoneUmbrellaTestFramework do
     platform :ios, '12.0'

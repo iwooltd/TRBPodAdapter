@@ -9,24 +9,25 @@ PODS:
   - FirebaseAnalytics (4.0.3):
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
     - nanopb (~> 0.3)
   - FirebaseCore (4.0.5):
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
     - nanopb (~> 0.3)
   - FirebaseCrash (2.0.1):
     - FirebaseAnalytics (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/Logger (~> 2.1)
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
     - Protobuf (~> 3.1)
   - FirebaseInstanceID (2.0.1):
     - FirebaseCore (~> 4.0)
   - GoogleToolboxForMac/Defines (2.1.1)
   - GoogleToolboxForMac/Logger (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
-  - GoogleToolboxForMac/NSData+zlib (2.1.1):
+  - "GoogleToolboxForMac/NSData+zlib (2.1.1)":
     - GoogleToolboxForMac/Defines (= 2.1.1)
+  - GoogleWebRTC (1.1.29400)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
@@ -40,8 +41,24 @@ DEPENDENCIES:
   - DZImageEditing (from `https://github.com/harryworld/DZImageEditing`, commit `e9eb958409b9c50ac37e1f2a307f1ddb03578bcb`)
   - Firebase/Core
   - Firebase/Crash
+  - GoogleWebRTC (~> 1.1)
   - TOCropViewController
   - TUDelorean
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseCore
+    - FirebaseCrash
+    - FirebaseInstanceID
+    - GoogleToolboxForMac
+    - GoogleWebRTC
+    - nanopb
+    - Protobuf
+    - TOCropViewController
+  https://github.com/iwooltd/specs.git:
+    - TUDelorean
 
 EXTERNAL SOURCES:
   DZImageEditing:
@@ -58,14 +75,15 @@ SPEC CHECKSUMS:
   Firebase: ebebf41db7f10e0c7668b6eaaa857fbe599aa478
   FirebaseAnalytics: 76f754d37ca5b04f36856729b6af3ca0152d1069
   FirebaseCore: 7d876ea97a830cbe62ba7fbbe7670c833a324ba0
-  FirebaseCrash: bce9fbfb7dd6cc850a41fe39740a2292e6b61f2e
+  FirebaseCrash: 1251b744f2511c62c86d2b6c2247d18e4491cc5d
   FirebaseInstanceID: 0500e3cb54a1a4e01a8cffcc09323b8bb8fc7e1e
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
+  GoogleWebRTC: cfb83bc346435a17fe06bb05f04ad826b858a7fb
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 03eef2ee0b674770735cf79d9c4d3659cf6908e8
   TOCropViewController: e6e31b38d785a901e5651a1e7fff71bcda6c5214
   TUDelorean: 2220dd6b5a3fda0bd00cc9bb80cdadda3c99e75c
 
-PODFILE CHECKSUM: 8cc7e04a53daea889c71ec2b0415e04b44f1da90
+PODFILE CHECKSUM: e0f316dc9897bb3c1c3bbcc22cffaf3b4d0a9ce4
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.9.1
